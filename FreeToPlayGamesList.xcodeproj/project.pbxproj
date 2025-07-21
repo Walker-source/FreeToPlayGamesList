@@ -6,17 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5D5A0FCE2E2EA5EB00FBE13C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */; };
+		5D5A0FCF2E2EA5EB00FBE13C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCB2E2EA5EB00FBE13C /* ContentView.swift */; };
+		5D5A0FD02E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCC2E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		5D5A0FBC2E2E996800FBE13C /* FreeToPlayGamesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeToPlayGamesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D5A0FCB2E2EA5EB00FBE13C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5D5A0FCC2E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeToPlayGamesListApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		5D5A0FBE2E2E996800FBE13C /* FreeToPlayGamesList */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FreeToPlayGamesList;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5D5A0FB92E2E996800FBE13C /* Frameworks */ = {
@@ -32,7 +33,7 @@
 		5D5A0FB32E2E996800FBE13C = {
 			isa = PBXGroup;
 			children = (
-				5D5A0FBE2E2E996800FBE13C /* FreeToPlayGamesList */,
+				5D5A0FCD2E2EA5EB00FBE13C /* FreeToPlayGamesList */,
 				5D5A0FBD2E2E996800FBE13C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +44,64 @@
 				5D5A0FBC2E2E996800FBE13C /* FreeToPlayGamesList.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5D5A0FCD2E2EA5EB00FBE13C /* FreeToPlayGamesList */ = {
+			isa = PBXGroup;
+			children = (
+				5D5A0FD12E2EA5F100FBE13C /* Views */,
+				5D5A0FD22E2EA61200FBE13C /* ViewModels */,
+				5D5A0FD32E2EA61D00FBE13C /* Models */,
+				5D5A0FD42E2EA62600FBE13C /* Networking */,
+				5D5A0FD52E2EA63D00FBE13C /* Resources */,
+				5D5A0FD62E2EA64C00FBE13C /* App */,
+			);
+			path = FreeToPlayGamesList;
+			sourceTree = "<group>";
+		};
+		5D5A0FD12E2EA5F100FBE13C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D5A0FCB2E2EA5EB00FBE13C /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D5A0FD22E2EA61200FBE13C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5D5A0FD32E2EA61D00FBE13C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5D5A0FD42E2EA62600FBE13C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5D5A0FD52E2EA63D00FBE13C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5D5A0FD62E2EA64C00FBE13C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5D5A0FCC2E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +118,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				5D5A0FBE2E2E996800FBE13C /* FreeToPlayGamesList */,
 			);
 			name = FreeToPlayGamesList;
 			packageProductDependencies = (
@@ -109,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5A0FCE2E2EA5EB00FBE13C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5A0FCF2E2EA5EB00FBE13C /* ContentView.swift in Sources */,
+				5D5A0FD02E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +327,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.MaDoGsoftware.FreeToPlayGamesList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -296,9 +359,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.MaDoGsoftware.FreeToPlayGamesList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
