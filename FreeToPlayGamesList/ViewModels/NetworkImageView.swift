@@ -22,7 +22,7 @@ struct NetworkImageView: View {
                 ZStack {
                     Rectangle()
                         .fill(Color.gray.opacity(0.1))
-                    ProgressView()
+                    ProgressView("Loading...")
                 }
             case .success(let image):
                 image
