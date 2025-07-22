@@ -10,6 +10,7 @@ import SwiftUI
 struct GamesListView: View {
     @StateObject private var gamesList = GamesModel()
     
+    
     var body: some View {
         NavigationStack {
             if gamesList.isLoading {
@@ -20,14 +21,13 @@ struct GamesListView: View {
             } else {
                 List(gamesList.gamesList) { game in
                     HStack {
-                        AsyncImage(url: game.thumbnail) { image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                        } placeholder: {
-                            ProgressView("Loading")
-                        }
-                        .frame(width: 150, height: 100)
+                        NetworkImageView(
+                            url: game.thumbnail,
+                            width: ThumbnailCustomization.thumbnailWith,
+                            height: ThumbnailCustomization.thumbnailHeight,
+                            cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
+                            shadowRadius: ThumbnailCustomization.thumbnailShadowRadius
+                        )
                         
                         Text(game.title).bold()
                     }
