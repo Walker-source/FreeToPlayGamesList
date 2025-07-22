@@ -6,13 +6,81 @@
 //
 
 import SwiftUI
+import Combine
 
-struct GameViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+@MainActor
+final class GamesModel: ObservableObject {
+    @Published var gamesList: [Game] = []
+    @Published var isLoading = false
+    @Published var errorMessage: String?
+    
+    // MARK: - Private Properties
+    private let networkManager = NetworkManager.shared
+    
+    // MARK: - Private Methods
+    private func sortGamesByTitle() {
+        gamesList.sort { $0.title < $1.title}
     }
-}
-
-#Preview {
-    GameViewModel()
+    private func fixLowercasedTitle() {
+        gamesList = gamesList.map { game in
+            var gameModel = game
+            var title = game.title
+            
+            if let firstCharacter = title.first, firstCharacter.isLowercase {
+                title.replaceSubrange(
+                    title.startIndex...title.startIndex,
+                    with: String(firstCharacter).uppercased()
+                )
+                gameModel.title = title
+            }
+            return gameModel
+        }
+    }
+    
+    func fetchImage(from url: URL, completion: @escaping (Image) -> Void) {
+        networkManager.fetchImage(from: url) { [weak self] result in
+            guard self != nil else { return }
+            
+            switch result {
+            case .success(let imageData):
+                guard let uiImage = UIImage(data: imageData) else {
+                    return
+                }
+                let image = Image(uiImage: uiImage)
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            case .failure(_):
+                return
+            }
+        }
+    }
+    func fetchGamesList() {
+        isLoading = true
+        
+        networkManager.fetchFreeToPlayGamesList(from: networkManager.freeToPlayGamesURL) { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case .success(let games):
+                gamesList = games
+                fixLowercasedTitle()
+                sortGamesByTitle()
+            case .failure(_):
+                return
+            }
+        }
+        isLoading = false
+    }
+    
+//    func fetchGames() async {
+//        isLoading = true
+//        do {
+//            let url = URL(string: "https://www.freetogame.com/api/games?platform=pc")!
+//            gamesList = try await NetworkManager.shared.fetchData(from: url, type: [Game].self)
+//        } catch {
+//            errorMessage = "Ошибка: \(error.localizedDescription)"
+//        }
+//        isLoading = false
+//    }
 }
