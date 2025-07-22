@@ -1,5 +1,5 @@
 //
-//  GameModel.swift
+//  Game.swift
 //  FreeToPlayGamesList
 //
 //  Created by Denis Lachikhin on 21.07.2025.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Game: Decodable {
+struct Game: Decodable, Identifiable {
     let id: Int
     var title: String
     let thumbnail: URL
