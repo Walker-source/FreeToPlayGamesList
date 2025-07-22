@@ -72,15 +72,4 @@ final class GamesModel: ObservableObject {
         }
         isLoading = false
     }
-    
-//    func fetchGames() async {
-//        isLoading = true
-//        do {
-//            let url = URL(string: "https://www.freetogame.com/api/games?platform=pc")!
-//            gamesList = try await NetworkManager.shared.fetchData(from: url, type: [Game].self)
-//        } catch {
-//            errorMessage = "Ошибка: \(error.localizedDescription)"
-//        }
-//        isLoading = false
-//    }
 }
