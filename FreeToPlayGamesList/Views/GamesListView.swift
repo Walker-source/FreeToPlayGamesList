@@ -19,8 +19,18 @@ struct GamesListView: View {
                     .foregroundStyle(Color.red)
             } else {
                 List(gamesList.gamesList) { game in
-                    
-                    Text(game.title).bold()
+                    HStack {
+                        AsyncImage(url: game.thumbnail) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                        } placeholder: {
+                            ProgressView("Loading")
+                        }
+                        .frame(width: 150, height: 100)
+                        
+                        Text(game.title).bold()
+                    }
                 }
                 .navigationTitle(Text("Games"))
             }
