@@ -1,5 +1,5 @@
 //
-//  GamesListView.swift
+//  GameListView.swift
 //  FreeToPlayGamesList
 //
 //  Created by Denis Lachikhin on 21.07.2025.
@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GamesListView: View {
     @StateObject private var gamesList = GamesModel()
-    
     
     var body: some View {
         NavigationStack {
@@ -23,9 +22,9 @@ struct GamesListView: View {
                     
                     Text(game.title).bold()
                 }
+                .navigationTitle(Text("Games"))
             }
         }
-        .navigationTitle("Игры")
         .task {
              gamesList.fetchGamesList()
         }
