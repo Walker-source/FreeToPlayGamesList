@@ -12,6 +12,7 @@ struct NetworkImageView: View {
     var width: CGFloat
     var height: CGFloat
     var cornerRadius: CGFloat
+    var shadowRadius: CGFloat
     
     
     var body: some View {
@@ -27,8 +28,9 @@ struct NetworkImageView: View {
                 image
                     .resizable()
                     .scaledToFit()
-                    .clipped()
-            case .failure(let error):
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+//                    .clipped()
+            case .failure(_):
                 ZStack {
                     Rectangle()
                         .fill(Color.gray.opacity(0.1))
@@ -42,5 +44,8 @@ struct NetworkImageView: View {
                 EmptyView()
             }
         }
+        .frame(width: width, height: height)
+        .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+        .shadow(radius: shadowRadius)
     }
 }
