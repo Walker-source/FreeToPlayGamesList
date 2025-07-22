@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		5D5A0FCE2E2EA5EB00FBE13C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */; };
-		5D5A0FCF2E2EA5EB00FBE13C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCB2E2EA5EB00FBE13C /* ContentView.swift */; };
+		5D5A0FCF2E2EA5EB00FBE13C /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCB2E2EA5EB00FBE13C /* GamesListView.swift */; };
 		5D5A0FD02E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCC2E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift */; };
-		5D5A0FD82E2EA6CE00FBE13C /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FD72E2EA6C200FBE13C /* GameModel.swift */; };
+		5D5A0FD82E2EA6CE00FBE13C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FD72E2EA6C200FBE13C /* Game.swift */; };
+		5D5A0FDA2E2EA77600FBE13C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FD92E2EA75000FBE13C /* NetworkManager.swift */; };
+		5D5A0FDC2E2EA9AD00FBE13C /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FDB2E2EA9AD00FBE13C /* GameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D5A0FBC2E2E996800FBE13C /* FreeToPlayGamesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeToPlayGamesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5D5A0FCB2E2EA5EB00FBE13C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5D5A0FCB2E2EA5EB00FBE13C /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
 		5D5A0FCC2E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeToPlayGamesListApp.swift; sourceTree = "<group>"; };
-		5D5A0FD72E2EA6C200FBE13C /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		5D5A0FD72E2EA6C200FBE13C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		5D5A0FD92E2EA75000FBE13C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5D5A0FDB2E2EA9AD00FBE13C /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 				5D5A0FD22E2EA61200FBE13C /* ViewModels */,
 				5D5A0FD32E2EA61D00FBE13C /* Models */,
 				5D5A0FD42E2EA62600FBE13C /* Networking */,
+				5D5A0FDF2E2ED3CD00FBE13C /* Utilities */,
 				5D5A0FD52E2EA63D00FBE13C /* Resources */,
 				5D5A0FD62E2EA64C00FBE13C /* App */,
 			);
@@ -64,7 +69,7 @@
 		5D5A0FD12E2EA5F100FBE13C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5D5A0FCB2E2EA5EB00FBE13C /* ContentView.swift */,
+				5D5A0FCB2E2EA5EB00FBE13C /* GamesListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -72,6 +77,7 @@
 		5D5A0FD22E2EA61200FBE13C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5D5A0FDB2E2EA9AD00FBE13C /* GameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -79,7 +85,7 @@
 		5D5A0FD32E2EA61D00FBE13C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5D5A0FD72E2EA6C200FBE13C /* GameModel.swift */,
+				5D5A0FD72E2EA6C200FBE13C /* Game.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,6 +93,7 @@
 		5D5A0FD42E2EA62600FBE13C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5D5A0FD92E2EA75000FBE13C /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -105,6 +112,13 @@
 				5D5A0FCC2E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		5D5A0FDF2E2ED3CD00FBE13C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +193,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D5A0FCF2E2EA5EB00FBE13C /* ContentView.swift in Sources */,
+				5D5A0FDA2E2EA77600FBE13C /* NetworkManager.swift in Sources */,
+				5D5A0FCF2E2EA5EB00FBE13C /* GamesListView.swift in Sources */,
 				5D5A0FD02E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift in Sources */,
-				5D5A0FD82E2EA6CE00FBE13C /* GameModel.swift in Sources */,
+				5D5A0FDC2E2EA9AD00FBE13C /* GameViewModel.swift in Sources */,
+				5D5A0FD82E2EA6CE00FBE13C /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
