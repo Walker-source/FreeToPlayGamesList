@@ -21,7 +21,7 @@ struct GamesListView: View {
             } else {
                 List(gamesList.gamesList) { game in
                     HStack {
-                        NetworkImageView(
+                        ThumbnailImageView(
                             url: game.thumbnail,
                             width: ThumbnailCustomization.thumbnailWith,
                             height: ThumbnailCustomization.thumbnailHeight,
@@ -29,8 +29,11 @@ struct GamesListView: View {
                             shadowRadius: ThumbnailCustomization.thumbnailShadowRadius
                         )
                         
-                        Text(game.title).bold()
+                        Text(game.title)
+                            .font(.title3)
+                            .bold()
                     }
+                    .padding(2)
                 }
                 .navigationTitle(Text("Games"))
             }

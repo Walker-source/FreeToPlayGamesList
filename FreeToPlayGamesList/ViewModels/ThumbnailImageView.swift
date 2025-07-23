@@ -1,5 +1,5 @@
 //
-//  NetworkImageView.swift
+//  ThumbnailImageView.swift
 //  FreeToPlayGamesList
 //
 //  Created by Denis Lachikhin on 22.07.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NetworkImageView: View {
+struct ThumbnailImageView: View {
     let url: URL?
     var width: CGFloat
     var height: CGFloat
@@ -29,7 +29,6 @@ struct NetworkImageView: View {
                     .resizable()
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-//                    .clipped()
             case .failure(_):
                 ZStack {
                     Rectangle()
@@ -39,6 +38,7 @@ struct NetworkImageView: View {
                         .scaledToFit()
                         .frame(width: 40, height: 40)
                         .foregroundStyle(.gray)
+                    
                 }
             @unknown default:
                 EmptyView()
