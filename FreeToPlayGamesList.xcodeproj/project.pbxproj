@@ -13,7 +13,7 @@
 		5D5A0FD82E2EA6CE00FBE13C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FD72E2EA6C200FBE13C /* Game.swift */; };
 		5D5A0FDA2E2EA77600FBE13C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FD92E2EA75000FBE13C /* NetworkManager.swift */; };
 		5D5A0FDC2E2EA9AD00FBE13C /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FDB2E2EA9AD00FBE13C /* GameViewModel.swift */; };
-		5D5A0FE32E2FED6C00FBE13C /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FE22E2FED5400FBE13C /* ThumbnailImageView.swift */; };
+		5D5A0FE32E2FED6C00FBE13C /* ThumbnailImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FE22E2FED5400FBE13C /* ThumbnailImageViewModel.swift */; };
 		5D5A0FE52E2FF0DF00FBE13C /* AppCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FE42E2FF0A600FBE13C /* AppCustomization.swift */; };
 		5D5A0FE92E3180C700FBE13C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FE82E3180C600FBE13C /* GameView.swift */; };
 /* End PBXBuildFile section */
@@ -26,7 +26,7 @@
 		5D5A0FD72E2EA6C200FBE13C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5D5A0FD92E2EA75000FBE13C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5D5A0FDB2E2EA9AD00FBE13C /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		5D5A0FE22E2FED5400FBE13C /* ThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageView.swift; sourceTree = "<group>"; };
+		5D5A0FE22E2FED5400FBE13C /* ThumbnailImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageViewModel.swift; sourceTree = "<group>"; };
 		5D5A0FE42E2FF0A600FBE13C /* AppCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomization.swift; sourceTree = "<group>"; };
 		5D5A0FE82E3180C600FBE13C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +84,7 @@
 		5D5A0FD22E2EA61200FBE13C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5D5A0FE22E2FED5400FBE13C /* ThumbnailImageView.swift */,
+				5D5A0FE22E2FED5400FBE13C /* ThumbnailImageViewModel.swift */,
 				5D5A0FDB2E2EA9AD00FBE13C /* GameViewModel.swift */,
 			);
 			path = ViewModels;
@@ -204,7 +204,7 @@
 			files = (
 				5D5A0FE52E2FF0DF00FBE13C /* AppCustomization.swift in Sources */,
 				5D5A0FDA2E2EA77600FBE13C /* NetworkManager.swift in Sources */,
-				5D5A0FE32E2FED6C00FBE13C /* ThumbnailImageView.swift in Sources */,
+				5D5A0FE32E2FED6C00FBE13C /* ThumbnailImageViewModel.swift in Sources */,
 				5D5A0FCF2E2EA5EB00FBE13C /* GamesListView.swift in Sources */,
 				5D5A0FD02E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift in Sources */,
 				5D5A0FDC2E2EA9AD00FBE13C /* GameViewModel.swift in Sources */,
