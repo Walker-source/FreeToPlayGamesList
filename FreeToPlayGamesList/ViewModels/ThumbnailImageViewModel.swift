@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ThumbnailImageView: View {
+struct ThumbnailImageViewModel: View {
     let url: URL?
-    var width: CGFloat
-    var height: CGFloat
+    var width: CGFloat?
+    var height: CGFloat?
     var cornerRadius: CGFloat
     var shadowRadius: CGFloat
     
