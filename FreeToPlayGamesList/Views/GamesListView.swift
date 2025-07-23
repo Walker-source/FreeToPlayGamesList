@@ -20,20 +20,22 @@ struct GamesListView: View {
                     .foregroundStyle(Color.red)
             } else {
                 List(gamesList.gamesList) { game in
-                    HStack {
-                        ThumbnailImageView(
-                            url: game.thumbnail,
-                            width: ThumbnailCustomization.thumbnailWith,
-                            height: ThumbnailCustomization.thumbnailHeight,
-                            cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
-                            shadowRadius: ThumbnailCustomization.thumbnailShadowRadius
-                        )
-                        
-                        Text(game.title)
-                            .font(.title3)
-                            .bold()
+                    NavigationLink(destination: GameView(game: game)) {
+                        HStack {
+                            ThumbnailImageViewModel(
+                                url: game.thumbnail,
+                                width: ThumbnailCustomization.thumbnailWith,
+                                height: ThumbnailCustomization.thumbnailHeight,
+                                cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
+                                shadowRadius: ThumbnailCustomization.thumbnailShadowRadius
+                            )
+                            
+                            Text(game.title)
+                                .font(.title3)
+                                .bold()
+                        }
+                        .padding(2)
                     }
-                    .padding(2)
                 }
                 .navigationTitle(Text("Games"))
             }
