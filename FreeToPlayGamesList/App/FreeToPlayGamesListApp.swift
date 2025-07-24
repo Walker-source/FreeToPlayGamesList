@@ -11,7 +11,7 @@ import SwiftUI
 struct FreeToPlayGamesListApp: App {
     var body: some Scene {
         WindowGroup {
-            GamesListView()
+            MainView()
         }
     }
 }
