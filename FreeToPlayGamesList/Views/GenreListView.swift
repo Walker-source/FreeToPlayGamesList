@@ -1,19 +1,21 @@
 //
-//  GameListView.swift
+//  GenreListView.swift
 //  FreeToPlayGamesList
 //
-//  Created by Denis Lachikhin on 21.07.2025.
+//  Created by Denis Lachikhin on 25.07.2025.
 //
 
 import SwiftUI
 
-struct GamesListView: View {
+struct GenreListView: View {
     let games: [Game]
     
     var body: some View {
         NavigationStack {
             List(games) { game in
-                NavigationLink(destination: GameView(game: game)) {
+                Section(
+                    header: Text(game.genre)
+                ) {
                     HStack {
                         ThumbnailImageViewModel(
                             width: ThumbnailCustomization.thumbnailWith,
@@ -23,18 +25,19 @@ struct GamesListView: View {
                             url: game.thumbnail
                         )
                         
-                        ListLabelViewModel(gameTitle: game.title)                  }
+                        ListLabelViewModel(gameTitle: game.title)
+                    }
                     .padding(2)
                 }
+                
             }
-            .navigationTitle(Text("Games"))
+            .navigationTitle("Genres")
         }
-
     }
 }
 
 #Preview {
-    GamesListView(games: [Game(
+    GenreListView(games: [Game(
         id: 1,
         title: "TheTestGame",
         thumbnail: URL(string: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.blog.udonis.co%2Fmobile-marketing%2Fmobile-games%2Ftop-shooter-games&psig=AOvVaw0OT4B1Gy7HYtKXKjmamlg9&ust=1753389974257000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDum5nt044DFQAAAAAdAAAAABAE")!,
