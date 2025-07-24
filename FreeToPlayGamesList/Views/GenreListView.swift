@@ -10,26 +10,36 @@ import SwiftUI
 struct GenreListView: View {
     let games: [Game]
     
+    var groupedGames: [String: [Game]] {
+        Dictionary(grouping: games, by: {$0.genre})
+    }
+    var sortedGenres: [String] {
+        groupedGames.keys.sorted()
+    }
+    
     var body: some View {
         NavigationStack {
-            List(games) { game in
-                Section(
-                    header: Text(game.genre)
-                ) {
-                    HStack {
-                        ThumbnailImageViewModel(
-                            width: ThumbnailCustomization.thumbnailWith,
-                            height: ThumbnailCustomization.thumbnailHeight,
-                            cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
-                            shadowRadius: ThumbnailCustomization.thumbnailShadowRadius,
-                            url: game.thumbnail
-                        )
-                        
-                        ListLabelViewModel(gameTitle: game.title)
+            List {
+                ForEach(sortedGenres, id: \.self) { genre in
+                    Section(header: Text(genre)) {
+                        ForEach(groupedGames[genre] ?? []) { game in
+                            NavigationLink(destination: GameView(game: game)) {
+                                HStack {
+                                    ThumbnailImageViewModel(
+                                        width: ThumbnailCustomization.thumbnailWith,
+                                        height: ThumbnailCustomization.thumbnailHeight,
+                                        cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
+                                        shadowRadius: ThumbnailCustomization.thumbnailShadowRadius,
+                                        url: game.thumbnail
+                                    )
+                                    
+                                    ListLabelViewModel(gameTitle: game.title)
+                                }
+                                .padding(2)
+                            }
+                        }
                     }
-                    .padding(2)
                 }
-                
             }
             .navigationTitle("Genres")
         }
