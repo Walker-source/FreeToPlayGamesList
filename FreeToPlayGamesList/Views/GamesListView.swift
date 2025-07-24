@@ -8,44 +8,37 @@
 import SwiftUI
 
 struct GamesListView: View {
-    @StateObject private var games = GamesViewModel()
+    let games: [Game]
     
     
     var body: some View {
         NavigationStack {
-            if games.isLoading {
-                ProgressView("Загрузка...")
-            } else if let error = games.errorMessage {
-                Text(error)
-                    .foregroundStyle(Color.red)
-            } else {
-                List(games.gamesList) { game in
-                    NavigationLink(destination: GameView(game: game)) {
-                        HStack {
-                            ThumbnailImageViewModel(
-                                url: game.thumbnail,
-                                width: ThumbnailCustomization.thumbnailWith,
-                                height: ThumbnailCustomization.thumbnailHeight,
-                                cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
-                                shadowRadius: ThumbnailCustomization.thumbnailShadowRadius
-                            )
-                            
-                            Text(game.title)
-                                .font(.title3)
-                                .bold()
-                        }
-                        .padding(2)
+            List(games) { game in
+                NavigationLink(destination: GameView(game: game)) {
+                    HStack {
+                        ThumbnailImageViewModel(
+                            url: game.thumbnail,
+                            width: ThumbnailCustomization.thumbnailWith,
+                            height: ThumbnailCustomization.thumbnailHeight,
+                            cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
+                            shadowRadius: ThumbnailCustomization.thumbnailShadowRadius
+                        )
+                        
+                        Text(game.title)
+                            .font(.title3)
+                            .bold()
                     }
+                    .padding(2)
                 }
-                .navigationTitle(Text("Games"))
             }
+            .navigationTitle(Text("Games"))
         }
-        .task {
-             games.fetchGamesList()
-        }
+//        .task {
+//             games.fetchGamesList()
+//        }
     }
 }
 
-#Preview {
-    GamesListView()
-}
+//#Preview {
+//    GamesListView()
+//}
