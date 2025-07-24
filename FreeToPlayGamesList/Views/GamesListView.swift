@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct GamesListView: View {
-    @StateObject private var gamesList = GamesModel()
+    @StateObject private var games = GamesViewModel()
     
     
     var body: some View {
         NavigationStack {
-            if gamesList.isLoading {
+            if games.isLoading {
                 ProgressView("Загрузка...")
-            } else if let error = gamesList.errorMessage {
+            } else if let error = games.errorMessage {
                 Text(error)
                     .foregroundStyle(Color.red)
             } else {
-                List(gamesList.gamesList) { game in
+                List(games.gamesList) { game in
                     NavigationLink(destination: GameView(game: game)) {
                         HStack {
                             ThumbnailImageViewModel(
@@ -41,7 +41,7 @@ struct GamesListView: View {
             }
         }
         .task {
-             gamesList.fetchGamesList()
+             games.fetchGamesList()
         }
     }
 }
