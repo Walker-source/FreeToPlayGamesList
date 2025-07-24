@@ -16,6 +16,7 @@
 		5D5A0FE32E2FED6C00FBE13C /* ThumbnailImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FE22E2FED5400FBE13C /* ThumbnailImageViewModel.swift */; };
 		5D5A0FE52E2FF0DF00FBE13C /* AppCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FE42E2FF0A600FBE13C /* AppCustomization.swift */; };
 		5D5A0FE92E3180C700FBE13C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FE82E3180C600FBE13C /* GameView.swift */; };
+		5D5A0FEB2E321FCA00FBE13C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FEA2E321FCA00FBE13C /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		5D5A0FE22E2FED5400FBE13C /* ThumbnailImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageViewModel.swift; sourceTree = "<group>"; };
 		5D5A0FE42E2FF0A600FBE13C /* AppCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomization.swift; sourceTree = "<group>"; };
 		5D5A0FE82E3180C600FBE13C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		5D5A0FEA2E321FCA00FBE13C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5D5A0FCB2E2EA5EB00FBE13C /* GamesListView.swift */,
+				5D5A0FEA2E321FCA00FBE13C /* MainView.swift */,
 				5D5A0FE82E3180C600FBE13C /* GameView.swift */,
 			);
 			path = Views;
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D5A0FE52E2FF0DF00FBE13C /* AppCustomization.swift in Sources */,
+				5D5A0FEB2E321FCA00FBE13C /* MainView.swift in Sources */,
 				5D5A0FDA2E2EA77600FBE13C /* NetworkManager.swift in Sources */,
 				5D5A0FE32E2FED6C00FBE13C /* ThumbnailImageViewModel.swift in Sources */,
 				5D5A0FCF2E2EA5EB00FBE13C /* GamesListView.swift in Sources */,
