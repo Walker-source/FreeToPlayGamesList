@@ -22,7 +22,7 @@ struct MainView: View {
                     Tab("Games list", systemImage: "list.bullet") {
                         GamesListView(games: games.gamesList)
                     }
-                    Tab("Genre list", systemImage: "") {
+                    Tab("Genres list", systemImage: "list.bullet.circle") {
                         GenreListView(games: games.gamesList)
                     }
                 }
