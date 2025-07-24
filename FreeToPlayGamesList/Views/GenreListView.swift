@@ -21,7 +21,11 @@ struct GenreListView: View {
         NavigationStack {
             List {
                 ForEach(sortedGenres, id: \.self) { genre in
-                    Section(header: Text(genre)) {
+                    Section(
+                        header: Text(genre)
+                            .bold()
+                            .font(.subheadline)
+                    ) {
                         ForEach(groupedGames[genre] ?? []) { game in
                             NavigationLink(destination: GameView(game: game)) {
                                 HStack {
