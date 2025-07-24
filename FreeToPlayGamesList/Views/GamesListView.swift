@@ -10,7 +10,6 @@ import SwiftUI
 struct GamesListView: View {
     let games: [Game]
     
-    
     var body: some View {
         NavigationStack {
             List(games) { game in
@@ -33,9 +32,7 @@ struct GamesListView: View {
             }
             .navigationTitle(Text("Games"))
         }
-//        .task {
-//             games.fetchGamesList()
-//        }
+
     }
 }
 
