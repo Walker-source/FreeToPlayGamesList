@@ -13,10 +13,10 @@ struct GameView: View {
     var body: some View {
         VStack(spacing: GameViewCustomization.vstackPadding) {
             ThumbnailImageViewModel(
-                url: game.thumbnail,
                 height: GameViewCustomization.thumbnailImageHeight,
                 cornerRadius: GameViewCustomization.thumbnailCornerRaduius,
-                shadowRadius: GameViewCustomization.thumbnailShadowRaduius
+                shadowRadius: GameViewCustomization.thumbnailShadowRaduius,
+                url: game.thumbnail
             )
                 .padding()
             Text(game.shortDescription)

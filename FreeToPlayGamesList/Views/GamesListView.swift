@@ -17,11 +17,11 @@ struct GamesListView: View {
                 NavigationLink(destination: GameView(game: game)) {
                     HStack {
                         ThumbnailImageViewModel(
-                            url: game.thumbnail,
                             width: ThumbnailCustomization.thumbnailWith,
                             height: ThumbnailCustomization.thumbnailHeight,
                             cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
-                            shadowRadius: ThumbnailCustomization.thumbnailShadowRadius
+                            shadowRadius: ThumbnailCustomization.thumbnailShadowRadius,
+                            url: game.thumbnail
                         )
                         
                         Text(game.title)

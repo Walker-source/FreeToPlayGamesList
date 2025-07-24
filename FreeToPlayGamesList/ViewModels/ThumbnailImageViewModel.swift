@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ThumbnailImageViewModel: View {
-    let url: URL?
     var width: CGFloat?
     var height: CGFloat?
     var cornerRadius: CGFloat
     var shadowRadius: CGFloat
     
+    let url: URL
     
     var body: some View {
         AsyncImage(url: url) { phase in
