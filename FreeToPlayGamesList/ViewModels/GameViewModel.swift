@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 @MainActor
-final class GamesModel: ObservableObject {
+final class GamesViewModel: ObservableObject {
     @Published var gamesList: [Game] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
