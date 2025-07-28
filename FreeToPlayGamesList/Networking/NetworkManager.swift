@@ -5,7 +5,7 @@
 //  Created by Denis Lachikhin on 21.07.2025.
 //
 
-import Foundation
+import SwiftUI
 
 enum NetworkError: Error {
     case noData
@@ -64,5 +64,10 @@ final class NetworkManager {
                 }
                 
             }.resume()
+    }
+    
+    func openLink(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        UIApplication.shared.open(url)
     }
 }
