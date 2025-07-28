@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct ButtonViewModel: View {
+    let buttonText: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {}) {
+            Text(buttonText)
+                .bold()
+                .font(.title3)
+//                .padding()
+                
+        }
+        .frame(width: 120, height: 50)
+        .foregroundStyle(Color.white)
+        .background(Color.gray)
+        .cornerRadius(10)
+        .shadow(radius: 3)
     }
 }
 
 #Preview {
-    ButtonViewModel()
+    ButtonViewModel(buttonText: "Test button")
 }
