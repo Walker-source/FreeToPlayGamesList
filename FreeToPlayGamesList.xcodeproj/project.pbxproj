@@ -19,6 +19,7 @@
 		5D5A0FEB2E321FCA00FBE13C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FEA2E321FCA00FBE13C /* MainView.swift */; };
 		5D5A0FED2E32DBE400FBE13C /* ListLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FEC2E32DBE400FBE13C /* ListLabelViewModel.swift */; };
 		5D5A0FEF2E32DDC400FBE13C /* GenreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FEE2E32DDC400FBE13C /* GenreListView.swift */; };
+		5D5A0FF12E37940800FBE13C /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FF02E37940800FBE13C /* ButtonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		5D5A0FEA2E321FCA00FBE13C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5D5A0FEC2E32DBE400FBE13C /* ListLabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLabelViewModel.swift; sourceTree = "<group>"; };
 		5D5A0FEE2E32DDC400FBE13C /* GenreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreListView.swift; sourceTree = "<group>"; };
+		5D5A0FF02E37940800FBE13C /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				5D5A0FE22E2FED5400FBE13C /* ThumbnailImageViewModel.swift */,
 				5D5A0FDB2E2EA9AD00FBE13C /* GameViewModel.swift */,
 				5D5A0FEC2E32DBE400FBE13C /* ListLabelViewModel.swift */,
+				5D5A0FF02E37940800FBE13C /* ButtonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5A0FF12E37940800FBE13C /* ButtonViewModel.swift in Sources */,
 				5D5A0FE52E2FF0DF00FBE13C /* AppCustomization.swift in Sources */,
 				5D5A0FED2E32DBE400FBE13C /* ListLabelViewModel.swift in Sources */,
 				5D5A0FEB2E321FCA00FBE13C /* MainView.swift in Sources */,
