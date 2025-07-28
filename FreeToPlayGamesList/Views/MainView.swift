@@ -19,10 +19,10 @@ struct MainView: View {
                     .foregroundStyle(Color.red)
             } else {
                 TabView {
-                    Tab("Games list", systemImage: "list.bullet") {
+                    Tab("Games", systemImage: "list.bullet") {
                         GamesListView(games: games.gamesList)
                     }
-                    Tab("Genres list", systemImage: "list.bullet.circle") {
+                    Tab("Genres", systemImage: "list.bullet.circle") {
                         GenreListView(games: games.gamesList)
                     }
                 }
