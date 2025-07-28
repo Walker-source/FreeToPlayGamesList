@@ -12,13 +12,13 @@ struct Game: Decodable, Identifiable {
     var title: String
     let thumbnail: URL
     let shortDescription: String
-    let gameUrl: URL
+    let gameUrl: String
     let genre: String
     let platform: String
     let publisher: String
     let developer: String
     let releaseDate: String
-    let freetogameProfileUrl: URL
+    let freetogameProfileUrl: String
     
     var about: String {
         """
