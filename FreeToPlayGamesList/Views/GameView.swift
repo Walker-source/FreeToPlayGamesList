@@ -41,6 +41,17 @@ struct GameView: View {
                 Spacer()
             }
             .padding()
+            
+            Spacer()
+            
+            HStack(spacing: 50) {
+                ButtonViewModel(buttonText: "Game")
+//                Spacer()
+                ButtonViewModel(buttonText: "Free to play")
+            }
+            .padding(.bottom)
+            
+            Spacer()
         }
         .padding()
         
