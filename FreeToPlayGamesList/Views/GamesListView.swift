@@ -10,26 +10,55 @@ import SwiftUI
 struct GamesListView: View {
     let games: [Game]
     
+    @State private var searchText = ""
+    
+    private var filteredGames: [Game] {
+        if searchText.isEmpty {
+            return games
+        } else {
+            return games.filter {
+                $0.title.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
+    private var groupedGames: [String: [Game]] {
+        Dictionary(grouping: filteredGames) {
+            String($0.title.prefix(1)).uppercased()
+        }
+    }
+    private var sortedKeys: [String] {
+        groupedGames.keys.sorted()
+    }
+    
     var body: some View {
         NavigationStack {
-            List(games) { game in
-                NavigationLink(destination: GameView(game: game)) {
-                    HStack {
-                        ThumbnailImageViewModel(
-                            width: ThumbnailCustomization.thumbnailWith,
-                            height: ThumbnailCustomization.thumbnailHeight,
-                            cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
-                            shadowRadius: ThumbnailCustomization.thumbnailShadowRadius,
-                            url: game.thumbnail
-                        )
-                        
-                        ListLabelViewModel(gameTitle: game.title)                  }
-                    .padding(2)
+            ZStack(alignment: .topTrailing) {
+                ScrollViewReader { scrollProxy in
+                    List {
+                        ForEach(sortedKeys, id: \.self) { key in
+                            ForEach(groupedGames[key] ?? []) { game in
+                                NavigationLink(destination: GameView(game: game)) {
+                                    HStack {
+                                        ThumbnailImageViewModel(
+                                            width: ThumbnailCustomization.thumbnailWith,
+                                            height: ThumbnailCustomization.thumbnailHeight,
+                                            cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
+                                            shadowRadius: ThumbnailCustomization.thumbnailShadowRadius,
+                                            url: game.thumbnail
+                                        )
+                                        
+                                        ListLabelViewModel(gameTitle: game.title)                  }
+                                    .padding(2)
+                                }
+                            }
+                        }
+                       
+                    }
+                    .searchable(text: $searchText, prompt: "Search")
+                    .navigationTitle(Text("Games"))
                 }
             }
-            .navigationTitle(Text("Games"))
         }
-
     }
 }
 
@@ -48,3 +77,5 @@ struct GamesListView: View {
         freetogameProfileUrl: "https://store.epicgames.com/en-US/c/shooter-games?sortBy=releaseDate&sortDir=DESC&count=40"
     )])
 }
+
+
