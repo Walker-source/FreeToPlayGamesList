@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject private var games = GamesViewModel()
+    @EnvironmentObject private var games: GamesViewModel
     
     var body: some View {
         Group {
@@ -39,4 +39,5 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .environmentObject(GamesViewModel())
 }

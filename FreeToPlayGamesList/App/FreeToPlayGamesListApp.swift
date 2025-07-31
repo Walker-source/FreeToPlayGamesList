@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct FreeToPlayGamesListApp: App {
+    @StateObject private var gamesVM = GamesViewModel()
+
     var body: some Scene {
         WindowGroup {
             MainView()
         }
+        .environmentObject(gamesVM)
     }
 }

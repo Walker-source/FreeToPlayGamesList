@@ -6,9 +6,8 @@
 //
 
 import SwiftUI
-//import Combine
 
-//@MainActor
+@MainActor
 final class GamesViewModel: ObservableObject {
     @Published var gamesList: [Game] = []
     @Published var isLoading = false
