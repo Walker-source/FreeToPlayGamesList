@@ -1,14 +1,14 @@
 //
-//  GameViewModel.swift
+//  GamesViewModel.swift
 //  FreeToPlayGamesList
 //
 //  Created by Denis Lachikhin on 21.07.2025.
 //
 
 import SwiftUI
-import Combine
+//import Combine
 
-@MainActor
+//@MainActor
 final class GamesViewModel: ObservableObject {
     @Published var gamesList: [Game] = []
     @Published var isLoading = false
