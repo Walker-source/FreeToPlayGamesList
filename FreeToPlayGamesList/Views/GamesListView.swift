@@ -54,8 +54,13 @@ struct GamesListView: View {
                         }
                        
                     }
-                    .searchable(text: $searchText, prompt: "Search")
                     .navigationTitle(Text("Games"))
+                    .searchable(
+                        text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: "Search"
+                    )
+                    
                 }
             }
         }
