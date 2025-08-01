@@ -20,16 +20,16 @@ struct MainView: View {
             } else {
                 TabView {
                     Tab("Games", systemImage: "list.bullet") {
-                        GamesListView(games: games.gamesList)
+                        GamesListView()
                     }
                     Tab("Genres", systemImage: "list.bullet.circle") {
-                        GenreListView(games: games.gamesList)
+                        GenreListView()
                     }
                 }
                 
             }
             
-           
+            
         }
         .task {
             games.fetchGamesList()
