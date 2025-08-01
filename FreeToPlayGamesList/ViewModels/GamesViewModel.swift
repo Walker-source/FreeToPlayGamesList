@@ -16,26 +16,7 @@ final class GamesViewModel: ObservableObject {
     // MARK: - Private Properties
     private let networkManager = NetworkManager.shared
     
-    // MARK: - Private Methods
-    private func sortGamesByTitle() {
-        gamesList.sort { $0.title < $1.title}
-    }
-    private func fixLowercasedTitle() {
-        gamesList = gamesList.map { game in
-            var gameModel = game
-            var title = game.title
-            
-            if let firstCharacter = title.first, firstCharacter.isLowercase {
-                title.replaceSubrange(
-                    title.startIndex...title.startIndex,
-                    with: String(firstCharacter).uppercased()
-                )
-                gameModel.title = title
-            }
-            return gameModel
-        }
-    }
-    
+    // MARK: - Public Methods
     func fetchImage(from url: URL, completion: @escaping (Image) -> Void) {
         networkManager.fetchImage(from: url) { [weak self] result in
             guard self != nil else { return }
@@ -70,5 +51,25 @@ final class GamesViewModel: ObservableObject {
             }
         }
         isLoading = false
+    }
+    
+    // MARK: - Private Methods
+    private func sortGamesByTitle() {
+        gamesList.sort { $0.title < $1.title}
+    }
+    private func fixLowercasedTitle() {
+        gamesList = gamesList.map { game in
+            var gameModel = game
+            var title = game.title
+            
+            if let firstCharacter = title.first, firstCharacter.isLowercase {
+                title.replaceSubrange(
+                    title.startIndex...title.startIndex,
+                    with: String(firstCharacter).uppercased()
+                )
+                gameModel.title = title
+            }
+            return gameModel
+        }
     }
 }
