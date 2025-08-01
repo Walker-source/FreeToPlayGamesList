@@ -51,7 +51,7 @@ struct GameView: View {
                     frameHeight: GameViewButtonCustomization.frameHeight,
                     url: game.gameUrl
                 )
-//                Spacer()
+
                 ButtonViewModel(
                     buttonText: "About",
                     frameWidth: GameViewButtonCustomization.frameWidth,
