@@ -10,10 +10,10 @@ import SwiftUI
 struct GenreListView: View {
     let games: [Game]
     
-    var groupedGames: [String: [Game]] {
+    private var groupedGames: [String: [Game]] {
         Dictionary(grouping: games, by: {$0.genre})
     }
-    var sortedGenres: [String] {
+    private var sortedGenres: [String] {
         groupedGames.keys.sorted()
     }
     
