@@ -10,14 +10,34 @@ import SwiftUI
 struct GameDescriptionViewModel: View {
     let game: Game
     
+    let descriptionTextSize: CGFloat
+    let descriptionTextFrameHeight: CGFloat
+    let aboutTextSize: CGFloat
+    let aboutTextOpacity: CGFloat
+    
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             ScrollView {
                 Text(game.shortDescription)
+                    .font(
+                        .system(
+                            size: descriptionTextSize,
+                            weight: .bold
+                        )
+                    )
             }
-            .frame(height: 120)
+            .frame(height: descriptionTextFrameHeight)
             
             Text(game.about)
+                .font(
+                    .system(
+                        size: aboutTextSize,
+                        weight: .semibold
+                    )
+                )
+                .italic()
+                .opacity(aboutTextOpacity)
         }
     }
 }
@@ -36,6 +56,10 @@ struct GameDescriptionViewModel: View {
             developer: "Redish",
             releaseDate: "20.10.23",
             freetogameProfileUrl: "https://store.epicgames.com/en-US/c/shooter-games?sortBy=releaseDate&sortDir=DESC&count=40"
-        )
+        ),
+        descriptionTextSize: GameViewCustomization.descriptionTextSize,
+        descriptionTextFrameHeight: GameViewCustomization.descriptionTextFrameHeight,
+        aboutTextSize: GameViewCustomization.aboutLabelTextSize,
+        aboutTextOpacity: GameViewCustomization.aboutLabelOpacity
     )
 }
