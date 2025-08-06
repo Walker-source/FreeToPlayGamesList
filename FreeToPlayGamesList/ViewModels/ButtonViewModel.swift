@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ButtonViewModel: View {
     let buttonText: String
+    let textSize: CGFloat
+    
     let frameWidth: CGFloat
     let frameHeight: CGFloat
+    let cornerRadius: CGFloat
+    let shadowRaduis: CGFloat
+    
     let url: String
     
     private let networkManager = NetworkManager.shared
@@ -18,16 +23,18 @@ struct ButtonViewModel: View {
     var body: some View {
         Button(action: openLink) {
             Text(buttonText)
-                .bold()
-                .font(.title3)
+                .font(.system(size: textSize, weight: .bold))
                 .padding(3)
             
         }
-        .frame(width: 120, height: 50)
+        .frame(
+            width: frameWidth,
+            height: frameHeight
+        )
         .foregroundStyle(Color.white)
         .background(Color.gray)
-        .cornerRadius(10)
-        .shadow(radius: 3)
+        .cornerRadius(cornerRadius)
+        .shadow(radius: shadowRaduis)
     }
     
     private func openLink() {
@@ -38,8 +45,11 @@ struct ButtonViewModel: View {
 #Preview {
     ButtonViewModel(
         buttonText: "Test button",
+        textSize: 15,
         frameWidth: 120,
         frameHeight: 50,
+        cornerRadius: 10,
+        shadowRaduis: 5,
         url: "https://apple.com"
     )
 }

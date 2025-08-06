@@ -26,10 +26,7 @@ struct MainView: View {
                         GenreListView()
                     }
                 }
-                
             }
-            
-            
         }
         .task {
             games.fetchGamesList()

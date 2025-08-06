@@ -17,7 +17,7 @@ final class ThumbnailCustomization {
 
 // MARK: - Game View Properties
 final class GameViewCustomization {
-    static let vstackPadding: CGFloat = 15
+    static let vstackPadding: CGFloat = 3
     
     // MARK: - Thumbnail Properies
     static let thumbnailImageHeight: CGFloat = 200
@@ -26,7 +26,7 @@ final class GameViewCustomization {
     
     // MARK: - Description Text Properties
     static let descriptionTextSize: CGFloat = 20
-    static let descriptionTextFrameWidth: CGFloat = 340
+    static let descriptionTextFrameHeight: CGFloat = 120
     
     // MARK: - Label Properties
     static let aboutLabelTextSize: CGFloat = 15
@@ -34,7 +34,10 @@ final class GameViewCustomization {
 }
 
 // MARK: - Game View Button Properties
-final class GameViewButtonCustomization {
+final class GameViewButtonsCustomization {
+    static let textSize: CGFloat = 20
     static let frameWidth: CGFloat = 150
-    static let frameHeight: CGFloat = 50
+    static let frameHeight: CGFloat = 40
+    static let cornerRadius: CGFloat = 10
+    static let shadowRadius: CGFloat = 5
 }

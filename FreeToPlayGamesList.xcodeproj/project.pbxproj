@@ -20,6 +20,7 @@
 		5D5A0FED2E32DBE400FBE13C /* ListLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FEC2E32DBE400FBE13C /* ListLabelViewModel.swift */; };
 		5D5A0FEF2E32DDC400FBE13C /* GenreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FEE2E32DDC400FBE13C /* GenreListView.swift */; };
 		5D5A0FF12E37940800FBE13C /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FF02E37940800FBE13C /* ButtonViewModel.swift */; };
+		5DEC8D272E43527500420942 /* GameDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC8D262E43527500420942 /* GameDescriptionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		5D5A0FEC2E32DBE400FBE13C /* ListLabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLabelViewModel.swift; sourceTree = "<group>"; };
 		5D5A0FEE2E32DDC400FBE13C /* GenreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreListView.swift; sourceTree = "<group>"; };
 		5D5A0FF02E37940800FBE13C /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
+		5DEC8D262E43527500420942 /* GameDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				5D5A0FDB2E2EA9AD00FBE13C /* GamesViewModel.swift */,
 				5D5A0FEC2E32DBE400FBE13C /* ListLabelViewModel.swift */,
 				5D5A0FF02E37940800FBE13C /* ButtonViewModel.swift */,
+				5DEC8D262E43527500420942 /* GameDescriptionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				5D5A0FDA2E2EA77600FBE13C /* NetworkManager.swift in Sources */,
 				5D5A0FE32E2FED6C00FBE13C /* ThumbnailImageViewModel.swift in Sources */,
 				5D5A0FCF2E2EA5EB00FBE13C /* GamesListView.swift in Sources */,
+				5DEC8D272E43527500420942 /* GameDescriptionViewModel.swift in Sources */,
 				5D5A0FD02E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift in Sources */,
 				5D5A0FDC2E2EA9AD00FBE13C /* GamesViewModel.swift in Sources */,
 				5D5A0FE92E3180C700FBE13C /* GameView.swift in Sources */,
@@ -368,6 +372,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +405,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

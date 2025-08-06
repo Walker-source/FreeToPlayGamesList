@@ -18,16 +18,17 @@ struct GameView: View {
                 shadowRadius: GameViewCustomization.thumbnailShadowRaduius,
                 url: game.thumbnail
             )
-                .padding()
-            Text(game.shortDescription)
-                .font(
-                    .system(
-                        size: GameViewCustomization.descriptionTextSize,
-                        weight: .bold
+            
+            VStack(alignment: .leading) {
+                Text(game.shortDescription)
+                    .font(
+                        .system(
+                            size: GameViewCustomization.descriptionTextSize,
+                            weight: .bold
+                        )
                     )
-                )
-                .frame(width: GameViewCustomization.descriptionTextFrameWidth)
-            HStack {
+                    .frame(height: GameViewCustomization.descriptionTextFrameHeight)
+                
                 Text(game.about)
                     .font(
                         .system(
@@ -37,29 +38,32 @@ struct GameView: View {
                     )
                     .italic()
                     .opacity(GameViewCustomization.aboutLabelOpacity)
-                
-                Spacer()
             }
-            .padding()
+            
             
             Spacer()
             
-            HStack(spacing: 50) {
+            HStack( spacing: 50) {
                 ButtonViewModel(
                     buttonText: "Play",
-                    frameWidth: GameViewButtonCustomization.frameWidth,
-                    frameHeight: GameViewButtonCustomization.frameHeight,
+                    textSize: GameViewButtonsCustomization.textSize,
+                    frameWidth: GameViewButtonsCustomization.frameWidth,
+                    frameHeight: GameViewButtonsCustomization.frameHeight,
+                    cornerRadius: GameViewButtonsCustomization.cornerRadius,
+                    shadowRaduis: GameViewButtonsCustomization.shadowRadius,
                     url: game.gameUrl
                 )
 
                 ButtonViewModel(
                     buttonText: "About",
-                    frameWidth: GameViewButtonCustomization.frameWidth,
-                    frameHeight: GameViewButtonCustomization.frameHeight,
+                    textSize: GameViewButtonsCustomization.textSize,
+                    frameWidth: GameViewButtonsCustomization.frameWidth,
+                    frameHeight: GameViewButtonsCustomization.frameHeight,
+                    cornerRadius: GameViewButtonsCustomization.cornerRadius,
+                    shadowRaduis: GameViewButtonsCustomization.shadowRadius,
                     url: game.freetogameProfileUrl
                 )
             }
-            .padding(.bottom)
             
             Spacer()
         }
