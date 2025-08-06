@@ -19,27 +19,13 @@ struct GameView: View {
                 url: game.thumbnail
             )
             
-            VStack(alignment: .leading) {
-                Text(game.shortDescription)
-                    .font(
-                        .system(
-                            size: GameViewCustomization.descriptionTextSize,
-                            weight: .bold
-                        )
-                    )
-                    .frame(height: GameViewCustomization.descriptionTextFrameHeight)
-                
-                Text(game.about)
-                    .font(
-                        .system(
-                            size: GameViewCustomization.aboutLabelTextSize,
-                            weight: .semibold
-                        )
-                    )
-                    .italic()
-                    .opacity(GameViewCustomization.aboutLabelOpacity)
-            }
-            
+            GameDescriptionViewModel(
+                game: game,
+                descriptionTextSize: GameViewCustomization.descriptionTextSize,
+                descriptionTextFrameHeight: GameViewCustomization.descriptionTextFrameHeight,
+                aboutTextSize: GameViewCustomization.aboutLabelTextSize,
+                aboutTextOpacity: GameViewCustomization.aboutLabelOpacity
+            )
             
             Spacer()
             
