@@ -17,7 +17,7 @@ final class ThumbnailCustomization {
 
 // MARK: - Game View Properties
 final class GameViewCustomization {
-    static let vstackPadding: CGFloat = 3
+    static let vstackSpacing: CGFloat = 6
     
     // MARK: - Thumbnail Properies
     static let thumbnailImageHeight: CGFloat = 200

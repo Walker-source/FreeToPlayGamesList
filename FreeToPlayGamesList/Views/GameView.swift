@@ -11,7 +11,7 @@ struct GameView: View {
     let game: Game
     
     var body: some View {
-        VStack(spacing: GameViewCustomization.vstackPadding) {
+        VStack(spacing: GameViewCustomization.vstackSpacing) {
             ThumbnailImageViewModel(
                 height: GameViewCustomization.thumbnailImageHeight,
                 cornerRadius: GameViewCustomization.thumbnailCornerRaduius,
