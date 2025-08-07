@@ -25,11 +25,12 @@ final class GameViewCustomization {
     static let thumbnailShadowRaduius: CGFloat = 5
     
     // MARK: - Description Text Properties
-    static let descriptionTextSize: CGFloat = 20
+    static let descriptionTextSize: CGFloat = 15
     static let descriptionTextFrameHeight: CGFloat = 120
+    static let descriptionTaxtBackCorner: CGFloat = 15
     
-    // MARK: - Label Properties
-    static let aboutLabelTextSize: CGFloat = 15
+    // MARK: - About Label Properties
+    static let aboutLabelTextSize: CGFloat = 12
     static let aboutLabelOpacity: CGFloat = 0.7
 }
 
