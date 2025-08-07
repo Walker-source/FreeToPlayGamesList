@@ -14,20 +14,32 @@ struct GameDescriptionViewModel: View {
     let descriptionTextFrameHeight: CGFloat
     let aboutTextSize: CGFloat
     let aboutTextOpacity: CGFloat
+    let descriptionTextBackCorner: CGFloat
     
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            ScrollView {
-                Text(game.shortDescription)
-                    .font(
-                        .system(
-                            size: descriptionTextSize,
-                            weight: .bold
+            ZStack {
+                Rectangle()
+                    .frame(height: descriptionTextFrameHeight)
+                    .opacity(0.05)
+                    .clipShape(
+                        RoundedRectangle(
+                            cornerRadius: descriptionTextBackCorner
                         )
                     )
+                
+                ScrollView {
+                    Text(game.shortDescription)
+                        .font(
+                            .system(
+                                size: descriptionTextSize,
+                                weight: .bold
+                            )
+                        )
+                }
+                .frame(height: descriptionTextFrameHeight)
             }
-            .frame(height: descriptionTextFrameHeight)
             
             Text(game.about)
                 .font(
@@ -60,6 +72,7 @@ struct GameDescriptionViewModel: View {
         descriptionTextSize: GameViewCustomization.descriptionTextSize,
         descriptionTextFrameHeight: GameViewCustomization.descriptionTextFrameHeight,
         aboutTextSize: GameViewCustomization.aboutLabelTextSize,
-        aboutTextOpacity: GameViewCustomization.aboutLabelOpacity
+        aboutTextOpacity: GameViewCustomization.aboutLabelOpacity,
+        descriptionTextBackCorner: 15
     )
 }
