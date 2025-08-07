@@ -13,6 +13,13 @@ final class GamesViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     
+    var groupedGames: [String: [Game]] {
+        Dictionary(grouping: gamesList, by: {$0.genre})
+    }
+    var sortedGenres: [String] {
+        groupedGames.keys.sorted()
+    }
+    
     // MARK: - Private Properties
     private let networkManager = NetworkManager.shared
     
