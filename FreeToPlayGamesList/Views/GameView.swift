@@ -24,7 +24,8 @@ struct GameView: View {
                 descriptionTextSize: GameViewCustomization.descriptionTextSize,
                 descriptionTextFrameHeight: GameViewCustomization.descriptionTextFrameHeight,
                 aboutTextSize: GameViewCustomization.aboutLabelTextSize,
-                aboutTextOpacity: GameViewCustomization.aboutLabelOpacity
+                aboutTextOpacity: GameViewCustomization.aboutLabelOpacity,
+                descriptionTextBackCorner: GameViewCustomization.descriptionTaxtBackCorner
             )
             
             Spacer()
