@@ -10,56 +10,77 @@ import SwiftUI
 struct GenreListView: View {
     @EnvironmentObject private var games: GamesViewModel
     
+    @State private var genres: [String] = []
+    @State private var navigationTitleName = "All genres"
+    
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(games.sortedGenres, id: \.self) { genre in
-                    Section(
-                        header: Text(genre)
-                            .bold()
-                            .font(.subheadline)
-                    ) {
-                        ForEach(games.groupedGames[genre] ?? []) { game in
-                            NavigationLink(destination: GameView(game: game)) {
-                                HStack {
-                                    ThumbnailImageViewModel(
-                                        width:
-                                            ThumbnailCustomization.thumbnailWith,
-                                        height:
-                                            ThumbnailCustomization.thumbnailHeight,
-                                        cornerRadius:
-                                            ThumbnailCustomization.thumbnailCornerRadius,
-                                        shadowRadius:
-                                            ThumbnailCustomization.thumbnailShadowRadius,
-                                        url: game.thumbnail
-                                    )
-                                    
-                                    ListLabelViewModel(gameTitle: game.title)
+        Group {
+            NavigationStack {
+                List {
+                    ForEach(genres, id: \.self) { genre in
+                        Section(
+                            header: Text(genre)
+                                .bold()
+                                .font(.subheadline)
+                        ) {
+                            ForEach(games.groupedGames[genre] ?? []) { game in
+                                NavigationLink(destination: GameView(game: game)) {
+                                    HStack {
+                                        ThumbnailImageViewModel(
+                                            width:
+                                                ThumbnailCustomization.thumbnailWith,
+                                            height:
+                                                ThumbnailCustomization.thumbnailHeight,
+                                            cornerRadius:
+                                                ThumbnailCustomization.thumbnailCornerRadius,
+                                            shadowRadius:
+                                                ThumbnailCustomization.thumbnailShadowRadius,
+                                            url: game.thumbnail
+                                        )
+                                        
+                                        ListLabelViewModel(gameTitle: game.title)
+                                    }
+                                    .padding(2)
                                 }
-                                .padding(2)
                             }
                         }
                     }
                 }
-            }
-            .navigationTitle("Genres")
-            .toolbar {
-                ToolbarItem(placement: .principal) {
+                .navigationTitle(navigationTitleName)
+                .toolbar {
                     Menu {
+                        Button(action: allGenres) {
+                            Text("All")
+                        }
                         ForEach(games.sortedGenres, id: \.self) { genre in
-                            Button(action: {}) {
-                                Text(genre)
+                            let buttonName = genre
+                            Button(buttonName) {
+                                setGenre(genre: buttonName)
                             }
                         }
                     } label: {
-                        Text(genre)
+                        Image(systemName: "list.bullet")
                     }
-
+                   
                 }
             }
         }
+        .task {
+            genres = games.sortedGenres
+        }
+        
     }
     
+    // MARK: - Private Methods
+    private func setGenre(genre: String) {
+        genres.removeAll()
+        genres.append(genre)
+        navigationTitleName = genre
+    }
+    private func allGenres() {
+        genres = games.sortedGenres
+        navigationTitleName = "All genres"
+    }
 }
 
 #Preview {
