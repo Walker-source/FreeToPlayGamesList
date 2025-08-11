@@ -43,8 +43,23 @@ struct GenreListView: View {
                 }
             }
             .navigationTitle("Genres")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Menu {
+                        ForEach(games.sortedGenres, id: \.self) { genre in
+                            Button(action: {}) {
+                                Text(genre)
+                            }
+                        }
+                    } label: {
+                        Text(genre)
+                    }
+
+                }
+            }
         }
     }
+    
 }
 
 #Preview {
