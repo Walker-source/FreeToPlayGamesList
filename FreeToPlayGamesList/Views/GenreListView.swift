@@ -60,6 +60,7 @@ struct GenreListView: View {
                         }
                     } label: {
                         Image(systemName: "list.bullet")
+                            .bold()
                     }
                    
                 }
