@@ -13,7 +13,6 @@ struct ClearCacheButtonViewModel: View {
     var body: some View {
         Button(action: clearCache) {
             Image(systemName: "trash")
-                .bold()
         }
         .alert("Cache cleared", isPresented: $isPresented) {
             Button("Dismiss", action: {})

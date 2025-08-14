@@ -37,6 +37,7 @@ struct GameDescriptionViewModel: View {
                                 weight: .bold
                             )
                         )
+                        .padding(EdgeInsets(top: 3, leading: 5, bottom: 3, trailing: 5))
                 }
                 .frame(height: descriptionTextFrameHeight)
             }
