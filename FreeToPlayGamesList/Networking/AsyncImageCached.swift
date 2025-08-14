@@ -35,7 +35,7 @@ struct AsyncImageCached<Content>: View where Content: View {
         } else if let url {
             content(.empty)
                 .task {
-                    await load(url: url)
+                    loadImage(url: url)
                 }
         } else {
             content(.empty)
@@ -94,8 +94,8 @@ struct AsyncImageCached<Content>: View where Content: View {
         networkManager.fetchImage(from: url) { result in
             switch result {
             case .success(let uiImage):
-                let image = uiImage
-                loadedImage = Image(uiImage: image)
+                let image = UIImage(data: uiImage)
+                loadedImage = Image(uiImage: image ?? UIImage())
             case .failure(let failure):
                 return
             }
