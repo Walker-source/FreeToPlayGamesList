@@ -91,8 +91,14 @@ struct AsyncImageCached<Content>: View where Content: View {
         }
     }
     private func loadImage(url: URL) {
-        networkManager.fetchImage(from: url) { <#Result<Data, NetworkError>#> in
-            <#code#>
+        networkManager.fetchImage(from: url) { result in
+            switch result {
+            case .success(let uiImage):
+                let image = uiImage
+                loadedImage = Image(uiImage: image)
+            case .failure(let failure):
+                return
+            }
         }
     }
 }
