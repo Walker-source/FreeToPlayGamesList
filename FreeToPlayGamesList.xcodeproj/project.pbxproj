@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5D4024462E4CBF9B00C85532 /* AsyncImageCached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4024452E4CBF9B00C85532 /* AsyncImageCached.swift */; };
-		5D4024482E4CC6B200C85532 /* ImageMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4024472E4CC6B200C85532 /* ImageMemoryCache.swift */; };
 		5D5A0FCE2E2EA5EB00FBE13C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */; };
 		5D5A0FCF2E2EA5EB00FBE13C /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCB2E2EA5EB00FBE13C /* GamesListView.swift */; };
 		5D5A0FD02E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCC2E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		5D4024452E4CBF9B00C85532 /* AsyncImageCached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageCached.swift; sourceTree = "<group>"; };
-		5D4024472E4CC6B200C85532 /* ImageMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryCache.swift; sourceTree = "<group>"; };
 		5D5A0FBC2E2E996800FBE13C /* FreeToPlayGamesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeToPlayGamesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D5A0FCB2E2EA5EB00FBE13C /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			children = (
 				5D5A0FD92E2EA75000FBE13C /* NetworkManager.swift */,
 				5D4024452E4CBF9B00C85532 /* AsyncImageCached.swift */,
-				5D4024472E4CC6B200C85532 /* ImageMemoryCache.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -225,7 +222,6 @@
 			files = (
 				5D4024462E4CBF9B00C85532 /* AsyncImageCached.swift in Sources */,
 				5D5A0FF12E37940800FBE13C /* ButtonViewModel.swift in Sources */,
-				5D4024482E4CC6B200C85532 /* ImageMemoryCache.swift in Sources */,
 				5D5A0FE52E2FF0DF00FBE13C /* AppCustomization.swift in Sources */,
 				5D5A0FED2E32DBE400FBE13C /* ListLabelViewModel.swift in Sources */,
 				5D5A0FEB2E321FCA00FBE13C /* MainView.swift in Sources */,
