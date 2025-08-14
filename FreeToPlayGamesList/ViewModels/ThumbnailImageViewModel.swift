@@ -16,7 +16,7 @@ struct ThumbnailImageViewModel: View {
     let url: URL
     
     var body: some View {
-        AsyncImage(url: url) { phase in
+        AsyncImageCached(url: url) { phase in
             switch phase {
             case .empty:
                 ZStack {

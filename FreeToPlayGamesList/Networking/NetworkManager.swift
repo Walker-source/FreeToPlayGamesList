@@ -10,19 +10,33 @@ import SwiftUI
 enum NetworkError: Error {
     case noData
     case decodingError
+    case httpError(Int)
 }
 
 final class NetworkManager {
     static let shared = NetworkManager()
     let freeToPlayGamesURL = URL(string: "https://www.freetogame.com/api/games?platform=pc")!
+    
+    private let session: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .returnCacheDataElseLoad
+        return URLSession(configuration: config)
+    }()
 
-    private init() {}
+    private init() {
+        configureUrlCache()
+    }
     
     func fetchImage(
         from url: URL,
         completion: @escaping (Result<Data, NetworkError>) -> Void
     ) {
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        session.dataTask(with: url) { data, response, error in
+            if let httpResponse = response as? HTTPURLResponse, !(200...299).contains(httpResponse.statusCode) {
+                completion(.failure(.httpError(httpResponse.statusCode)))
+                return
+            }
+            
             guard let data else {
                 DispatchQueue.main.async {
                     completion(.failure(.noData))
@@ -35,12 +49,16 @@ final class NetworkManager {
             }
         }.resume()
     }
-    func fetchFreeToPlayGamesList(
+    func fetchData(
         from url: URL,
         completion: @escaping (Result<[Game], NetworkError>) -> Void
     ) {
-        URLSession.shared
-            .dataTask(with: url) { data, _, error in
+        session.dataTask(with: url) { data, response, error in
+                if let httpResponse = response as? HTTPURLResponse, !(200...299).contains(httpResponse.statusCode) {
+                    completion(.failure(.httpError(httpResponse.statusCode)))
+                    return
+                }
+                
                 guard let data else {
                     DispatchQueue.main.async {
                         completion(.failure(.noData))
@@ -69,5 +87,18 @@ final class NetworkManager {
     func openLink(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         UIApplication.shared.open(url)
+    }
+    
+    private func configureUrlCache() {
+        let memoryCapacity = 300 * 1024 * 1024
+        let diskCapacity = 300 * 1024 * 1024
+        
+        let cache = URLCache(
+            memoryCapacity: memoryCapacity,
+            diskCapacity: diskCapacity,
+            diskPath: "FTPGImagesCache"
+        )
+        
+        URLCache.shared = cache
     }
 }

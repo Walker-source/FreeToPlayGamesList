@@ -45,7 +45,7 @@ final class GamesViewModel: ObservableObject {
     func fetchGamesList() {
         isLoading = true
         
-        networkManager.fetchFreeToPlayGamesList(from: networkManager.freeToPlayGamesURL) { [weak self] result in
+        networkManager.fetchData(from: networkManager.freeToPlayGamesURL) { [weak self] result in
             guard let self else { return }
             
             switch result {
