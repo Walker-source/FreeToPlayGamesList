@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D4024462E4CBF9B00C85532 /* AsyncImageCached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4024452E4CBF9B00C85532 /* AsyncImageCached.swift */; };
+		5D40244A2E4E1F1C00C85532 /* ClearCacheButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4024492E4E1F1C00C85532 /* ClearCacheButtonViewModel.swift */; };
 		5D5A0FCE2E2EA5EB00FBE13C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */; };
 		5D5A0FCF2E2EA5EB00FBE13C /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCB2E2EA5EB00FBE13C /* GamesListView.swift */; };
 		5D5A0FD02E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCC2E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		5D4024452E4CBF9B00C85532 /* AsyncImageCached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageCached.swift; sourceTree = "<group>"; };
+		5D4024492E4E1F1C00C85532 /* ClearCacheButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCacheButtonViewModel.swift; sourceTree = "<group>"; };
 		5D5A0FBC2E2E996800FBE13C /* FreeToPlayGamesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeToPlayGamesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D5A0FCB2E2EA5EB00FBE13C /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				5D5A0FEC2E32DBE400FBE13C /* ListLabelViewModel.swift */,
 				5D5A0FF02E37940800FBE13C /* ButtonViewModel.swift */,
 				5DEC8D262E43527500420942 /* GameDescriptionViewModel.swift */,
+				5D4024492E4E1F1C00C85532 /* ClearCacheButtonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				5D5A0FCF2E2EA5EB00FBE13C /* GamesListView.swift in Sources */,
 				5DEC8D272E43527500420942 /* GameDescriptionViewModel.swift in Sources */,
 				5D5A0FD02E2EA5EB00FBE13C /* FreeToPlayGamesListApp.swift in Sources */,
+				5D40244A2E4E1F1C00C85532 /* ClearCacheButtonViewModel.swift in Sources */,
 				5D5A0FDC2E2EA9AD00FBE13C /* GamesViewModel.swift in Sources */,
 				5D5A0FE92E3180C700FBE13C /* GameView.swift in Sources */,
 				5D5A0FD82E2EA6CE00FBE13C /* Game.swift in Sources */,
