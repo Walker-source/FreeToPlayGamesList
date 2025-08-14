@@ -45,6 +45,11 @@ struct GamesListView: View {
                 placement: .navigationBarDrawer(displayMode: .always),
                 prompt: "Search"
             )
+            .toolbar {
+                ToolbarItem {
+                    ClearCacheButtonViewModel()
+                }
+            }
         }
     }
 }
