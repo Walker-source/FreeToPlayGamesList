@@ -21,7 +21,6 @@ struct AsyncImageCached<Content>: View where Content: View {
         scale: CGFloat = 1,
         transaction: Transaction = Transaction(),
         @ViewBuilder content: @escaping (AsyncImagePhase) -> Content,
-        
     ) {
         self.url = url
         self.scale = scale

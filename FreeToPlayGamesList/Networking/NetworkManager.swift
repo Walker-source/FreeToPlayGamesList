@@ -14,8 +14,9 @@ enum NetworkError: Error {
 }
 
 final class NetworkManager {
-    static let shared = NetworkManager()
     let freeToPlayGamesURL = URL(string: "https://www.freetogame.com/api/games?platform=pc")!
+
+    static let shared = NetworkManager()
     
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
@@ -27,6 +28,7 @@ final class NetworkManager {
         configureUrlCache()
     }
     
+    // MARK: - Public Methods
     func fetchImage(
         from url: URL,
         completion: @escaping (Result<Data, NetworkError>) -> Void
@@ -49,6 +51,7 @@ final class NetworkManager {
             }
         }.resume()
     }
+    
     func fetchData(
         from url: URL,
         completion: @escaping (Result<[Game], NetworkError>) -> Void
@@ -84,11 +87,12 @@ final class NetworkManager {
             }.resume()
     }
     
-    func openLink(urlString: String) {
-        guard let url = URL(string: urlString) else { return }
+    func openLink(url: String) {
+        guard let url = URL(string: url) else { return }
         UIApplication.shared.open(url)
     }
     
+    // MARK: - Private Methods
     private func configureUrlCache() {
         let memoryCapacity = 300 * 1024 * 1024
         let diskCapacity = 300 * 1024 * 1024
@@ -98,7 +102,6 @@ final class NetworkManager {
             diskCapacity: diskCapacity,
             diskPath: "FTPGImagesCache"
         )
-        
         URLCache.shared = cache
     }
 }

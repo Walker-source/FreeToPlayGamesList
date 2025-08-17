@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ButtonViewModel: View {
     let buttonText: String
-    let textSize: CGFloat
     
+    let textSize: CGFloat
     let frameWidth: CGFloat
     let frameHeight: CGFloat
     let cornerRadius: CGFloat
@@ -38,7 +38,7 @@ struct ButtonViewModel: View {
     }
     
     private func openLink() {
-        networkManager.openLink(urlString: url)
+        networkManager.openLink(url: url)
     }
 }
 
