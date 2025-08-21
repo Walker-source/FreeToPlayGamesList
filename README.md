@@ -8,4 +8,11 @@
 3. Детальная информация по игре. В этот экран мы попадаем по нажатию на игру в списке.
 
 ## Скриншоты
-![app screenshot](FreeToPlayGamesList/Resources/Assets.xcassets/Screen01)
+<p>
+  <img src="FreeToPlayGamesList/Resources/Assets.xcassets/screen01.imageset/screen01.png" width="250">
+  <img src="FreeToPlayGamesList/Resources/Assets.xcassets/screen02.imageset/screen02.png" width="250">
+  <img src="FreeToPlayGamesList/Resources/Assets.xcassets/screen03.imageset/screen03.png" width="250">
+  <img src="FreeToPlayGamesList/Resources/Assets.xcassets/screen04.imageset/screen04.png" width="250">
+  <img src="FreeToPlayGamesList/Resources/Assets.xcassets/screen05.imageset/screen05.png" width="250">
+</p>
+
