@@ -87,6 +87,20 @@ final class NetworkManager {
             }.resume()
     }
     
+    func fetchData(from url: URL) async throws -> [Game] {
+        let (data, _) = try await  URLSession.shared.data(from: url)
+        let decoder = JSONDecoder()
+        
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        do {
+            let games = try decoder.decode([Game].self, from: data)
+            return games
+        } catch {
+           throw  NetworkError.decodingError
+        }
+    }
+    
     func openLink(url: String) {
         guard let url = URL(string: url) else { return }
         UIApplication.shared.open(url)
