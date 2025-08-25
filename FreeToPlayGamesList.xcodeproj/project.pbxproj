@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D247BB72E5D06AE00EB681F /* MainViewErrorMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D247BB62E5D06AE00EB681F /* MainViewErrorMessageViewModel.swift */; };
 		5D4024462E4CBF9B00C85532 /* AsyncImageCached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4024452E4CBF9B00C85532 /* AsyncImageCached.swift */; };
 		5D40244A2E4E1F1C00C85532 /* ClearCacheButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4024492E4E1F1C00C85532 /* ClearCacheButtonViewModel.swift */; };
 		5D5A0FCE2E2EA5EB00FBE13C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A0FCA2E2EA5EB00FBE13C /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D247BB62E5D06AE00EB681F /* MainViewErrorMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewErrorMessageViewModel.swift; sourceTree = "<group>"; };
 		5D4024452E4CBF9B00C85532 /* AsyncImageCached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageCached.swift; sourceTree = "<group>"; };
 		5D4024492E4E1F1C00C85532 /* ClearCacheButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCacheButtonViewModel.swift; sourceTree = "<group>"; };
 		5D5A0FBC2E2E996800FBE13C /* FreeToPlayGamesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeToPlayGamesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				5D5A0FF02E37940800FBE13C /* ButtonViewModel.swift */,
 				5DEC8D262E43527500420942 /* GameDescriptionViewModel.swift */,
 				5D4024492E4E1F1C00C85532 /* ClearCacheButtonViewModel.swift */,
+				5D247BB62E5D06AE00EB681F /* MainViewErrorMessageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D4024462E4CBF9B00C85532 /* AsyncImageCached.swift in Sources */,
+				5D247BB72E5D06AE00EB681F /* MainViewErrorMessageViewModel.swift in Sources */,
 				5D5A0FF12E37940800FBE13C /* ButtonViewModel.swift in Sources */,
 				5D5A0FE52E2FF0DF00FBE13C /* AppCustomization.swift in Sources */,
 				5D5A0FED2E32DBE400FBE13C /* ListLabelViewModel.swift in Sources */,
