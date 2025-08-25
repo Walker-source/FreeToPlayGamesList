@@ -42,21 +42,18 @@ final class GamesViewModel: ObservableObject {
             }
         }
     }
-    func fetchGamesList() {
+    func fetchGamesList() async {
         isLoading = true
         
-        networkManager.fetchData(from: networkManager.freeToPlayGamesURL) { [weak self] result in
-            guard let self else { return }
+        do {
+            gamesList = try await networkManager.fetchData(from: networkManager.freeToPlayGamesURL)
+        } catch {
             
-            switch result {
-            case .success(let games):
-                gamesList = games
-                fixLowercasedTitle()
-                sortGamesByTitle()
-            case .failure(_):
-                return
-            }
         }
+        
+        fixLowercasedTitle()
+        sortGamesByTitle()
+        
         isLoading = false
     }
     
