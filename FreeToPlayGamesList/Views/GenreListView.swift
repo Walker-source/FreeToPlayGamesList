@@ -16,50 +16,58 @@ struct GenreListView: View {
     var body: some View {
         Group {
             NavigationStack {
-                List {
-                    ForEach(genres, id: \.self) { genre in
-                        Section(
-                            header: Text(genre)
-                                .bold()
-                                .font(.subheadline)
-                        ) {
-                            ForEach(games.groupedGames[genre] ?? []) { game in
-                                NavigationLink(destination: GameView(game: game)) {
-                                    HStack {
-                                        ThumbnailImageViewModel(
-                                            width:
-                                                ThumbnailCustomization.thumbnailWith,
-                                            height:
-                                                ThumbnailCustomization.thumbnailHeight,
-                                            cornerRadius:
-                                                ThumbnailCustomization.thumbnailCornerRadius,
-                                            shadowRadius:
-                                                ThumbnailCustomization.thumbnailShadowRadius,
-                                            url: game.thumbnail
-                                        )
-                                        
-                                        ListLabelViewModel(gameTitle: game.title)
+                if games.gamesList.isEmpty {
+                    MainViewErrorMessageViewModel(errorMessage: games.errorText) {
+                        Task {
+                            await games.fetchGamesList()
+                        }
+                    }
+                } else {
+                    List {
+                        ForEach(genres, id: \.self) { genre in
+                            Section(
+                                header: Text(genre)
+                                    .bold()
+                                    .font(.subheadline)
+                            ) {
+                                ForEach(games.groupedGames[genre] ?? []) { game in
+                                    NavigationLink(destination: GameView(game: game)) {
+                                        HStack {
+                                            ThumbnailImageViewModel(
+                                                width:
+                                                    ThumbnailCustomization.thumbnailWith,
+                                                height:
+                                                    ThumbnailCustomization.thumbnailHeight,
+                                                cornerRadius:
+                                                    ThumbnailCustomization.thumbnailCornerRadius,
+                                                shadowRadius:
+                                                    ThumbnailCustomization.thumbnailShadowRadius,
+                                                url: game.thumbnail
+                                            )
+                                            
+                                            ListLabelViewModel(gameTitle: game.title)
+                                        }
+                                        .padding(2)
                                     }
-                                    .padding(2)
                                 }
                             }
                         }
                     }
-                }
-                .navigationTitle(navigationTitleName)
-                .toolbar {
-                    Menu {
-                        Button(action: allGenres) {
-                            Text("All")
-                        }
-                        ForEach(games.sortedGenres, id: \.self) { genre in
-                            let buttonName = genre
-                            Button(buttonName) {
-                                setGenre(genre: buttonName)
+                    .navigationTitle(navigationTitleName)
+                    .toolbar {
+                        Menu {
+                            Button(action: allGenres) {
+                                Text("All")
                             }
+                            ForEach(games.sortedGenres, id: \.self) { genre in
+                                let buttonName = genre
+                                Button(buttonName) {
+                                    setGenre(genre: buttonName)
+                                }
+                            }
+                        } label: {
+                            Image(systemName: "list.bullet")
                         }
-                    } label: {
-                        Image(systemName: "list.bullet")
                     }
                 }
             }
