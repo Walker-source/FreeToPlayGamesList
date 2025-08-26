@@ -15,7 +15,7 @@ enum NetworkError: Error {
 
 final class NetworkManager {
     let freeToPlayGamesURL = URL(string: "https://www.freetogame.com/api/games?platform=pc")!
-
+    
     static let shared = NetworkManager()
     
     private let session: URLSession = {
@@ -23,68 +23,21 @@ final class NetworkManager {
         config.requestCachePolicy = .returnCacheDataElseLoad
         return URLSession(configuration: config)
     }()
-
+    
     private init() {
         configureUrlCache()
     }
     
     // MARK: - Public Methods
-    func fetchImage(
-        from url: URL,
-        completion: @escaping (Result<Data, NetworkError>) -> Void
-    ) {
-        session.dataTask(with: url) { data, response, error in
-            if let httpResponse = response as? HTTPURLResponse, !(200...299).contains(httpResponse.statusCode) {
-                completion(.failure(.httpError(httpResponse.statusCode)))
-                return
-            }
-            
-            guard let data else {
-                DispatchQueue.main.async {
-                    completion(.failure(.noData))
-                }
-                return
-            }
-            
-            DispatchQueue.main.async {
-                completion(.success(data))
-            }
-        }.resume()
-    }
-    
-    func fetchData(
-        from url: URL,
-        completion: @escaping (Result<[Game], NetworkError>) -> Void
-    ) {
-        session.dataTask(with: url) { data, response, error in
-                if let httpResponse = response as? HTTPURLResponse, !(200...299).contains(httpResponse.statusCode) {
-                    completion(.failure(.httpError(httpResponse.statusCode)))
-                    return
-                }
-                
-                guard let data else {
-                    DispatchQueue.main.async {
-                        completion(.failure(.noData))
-                    }
-                    print(error?.localizedDescription ?? "No error description")
-                    return
-                }
-                
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                
-                do {
-                    let game = try decoder.decode([Game].self, from: data)
-                    DispatchQueue.main.async {
-                        completion(.success(game))
-                    }
-                } catch {
-                    DispatchQueue.main.async {
-                        completion(.failure(.decodingError))
-                    }
-                }
-                
-            }.resume()
+    func fetchImage(from url: URL) async throws -> Image {
+        let image: Image
+        let (data, _) = try await URLSession.shared.data(from: url)
+        if let uiImage = UIImage(data: data) {
+            image = Image(uiImage: uiImage)
+        } else {
+            image = Image(systemName: "photo")
+        }
+        return image
     }
     
     func fetchData(from url: URL) async throws -> [Game] {
