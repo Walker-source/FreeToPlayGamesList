@@ -26,25 +26,6 @@ final class GamesViewModel: ObservableObject {
     private let networkManager = NetworkManager.shared
     
     // MARK: - Public Methods
-    func fetchImage(from url: URL, completion: @escaping (Image) -> Void) {
-        networkManager.fetchImage(from: url) { [weak self] result in
-            guard self != nil else { return }
-            
-            switch result {
-            case .success(let imageData):
-                guard let uiImage = UIImage(data: imageData) else {
-                    return
-                }
-                let image = Image(uiImage: uiImage)
-                DispatchQueue.main.async {
-                    completion(image)
-                }
-            case .failure(_):
-                return
-            }
-        }
-    }
-    
     func fetchGamesList() async {
         isLoading = true
         
