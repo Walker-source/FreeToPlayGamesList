@@ -1,5 +1,4 @@
 # FreeToPlay games list.
-## WIP
 
 Приложение написано при помощи swiftUI на архитектуре MVVM. Использовался API freetogame.com. 
 В приложении реализован networkManager отвечающий за работу с сетью. А так же AsyncImageCache
