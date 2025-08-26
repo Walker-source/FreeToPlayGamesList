@@ -24,30 +24,38 @@ struct GamesListView: View {
     
     var body: some View {
         NavigationStack {
-            List(filteredGames) { game in
-                NavigationLink(destination: GameView(game: game)) {
-                    HStack {
-                        ThumbnailImageViewModel(
-                            width: ThumbnailCustomization.thumbnailWith,
-                            height: ThumbnailCustomization.thumbnailHeight,
-                            cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
-                            shadowRadius: ThumbnailCustomization.thumbnailShadowRadius,
-                            url: game.thumbnail
-                        )
-                        
-                        ListLabelViewModel(gameTitle: game.title)                  }
-                    .padding(2)
+            if games.gamesList.isEmpty {
+                MainViewErrorMessageViewModel(errorMessage: games.errorText) {
+                    Task {
+                        await games.fetchGamesList()
+                    }
                 }
-            }
-            .navigationTitle(Text("Games"))
-            .searchable(
-                text: $searchText,
-                placement: .navigationBarDrawer(displayMode: .always),
-                prompt: "Search"
-            )
-            .toolbar {
-                ToolbarItem {
-                    ClearCacheButtonViewModel()
+            } else {
+                List(filteredGames) { game in
+                    NavigationLink(destination: GameView(game: game)) {
+                        HStack {
+                            ThumbnailImageViewModel(
+                                width: ThumbnailCustomization.thumbnailWith,
+                                height: ThumbnailCustomization.thumbnailHeight,
+                                cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
+                                shadowRadius: ThumbnailCustomization.thumbnailShadowRadius,
+                                url: game.thumbnail
+                            )
+                            
+                            ListLabelViewModel(gameTitle: game.title)                  }
+                        .padding(2)
+                    }
+                }
+                .navigationTitle(Text("Games"))
+                .searchable(
+                    text: $searchText,
+                    placement: .navigationBarDrawer(displayMode: .always),
+                    prompt: "Search"
+                )
+                .toolbar {
+                    ToolbarItem {
+                        ClearCacheButtonViewModel()
+                    }
                 }
             }
         }

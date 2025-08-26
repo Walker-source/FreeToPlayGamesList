@@ -29,7 +29,7 @@ struct MainView: View {
             }
         }
         .task {
-            games.fetchGamesList()
+            await games.fetchGamesList()
         }
     }
 }

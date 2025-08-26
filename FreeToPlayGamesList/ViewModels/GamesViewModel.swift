@@ -12,6 +12,8 @@ final class GamesViewModel: ObservableObject {
     @Published var gamesList: [Game] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
+    @Published var errorText = ""
+    @Published var showError = false
     
     var groupedGames: [String: [Game]] {
         Dictionary(grouping: gamesList, by: {$0.genre})
@@ -42,21 +44,20 @@ final class GamesViewModel: ObservableObject {
             }
         }
     }
-    func fetchGamesList() {
+    
+    func fetchGamesList() async {
         isLoading = true
         
-        networkManager.fetchData(from: networkManager.freeToPlayGamesURL) { [weak self] result in
-            guard let self else { return }
-            
-            switch result {
-            case .success(let games):
-                gamesList = games
-                fixLowercasedTitle()
-                sortGamesByTitle()
-            case .failure(_):
-                return
-            }
+        do {
+            gamesList = try await networkManager.fetchData(from: networkManager.freeToPlayGamesURL)
+        } catch {
+            errorText = error.localizedDescription
+            showError = true
         }
+        
+        fixLowercasedTitle()
+        sortGamesByTitle()
+        
         isLoading = false
     }
     
@@ -64,6 +65,7 @@ final class GamesViewModel: ObservableObject {
     private func sortGamesByTitle() {
         gamesList.sort { $0.title < $1.title}
     }
+    
     private func fixLowercasedTitle() {
         gamesList = gamesList.map { game in
             var gameModel = game

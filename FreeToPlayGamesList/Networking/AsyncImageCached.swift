@@ -34,22 +34,17 @@ struct AsyncImageCached<Content>: View where Content: View {
         } else if let url {
             content(.empty)
                 .task {
-                    loadImage(url: url)
+                   await loadImage(from: url)
                 }
         } else {
             content(.empty)
         }
     }
     
-    private func loadImage(url: URL) {
-        networkManager.fetchImage(from: url) { result in
-            switch result {
-            case .success(let uiImage):
-                let image = UIImage(data: uiImage)
-                loadedImage = Image(uiImage: image ?? UIImage())
-            case .failure(_):
-                return
-            }
+    private func loadImage(from url:URL) async {
+        Task {
+            let image = try await networkManager.fetchImage(from: url)
+            loadedImage = image
         }
     }
 }
