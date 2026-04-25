@@ -25,7 +25,7 @@ struct GamesListView: View {
     var body: some View {
         NavigationStack {
             if games.gamesList.isEmpty {
-                MainViewErrorMessageViewModel(errorMessage: games.errorText) {
+                ErrorMessageButtonView(errorMessage: games.errorText) {
                     Task {
                         await games.fetchGamesList()
                     }
@@ -34,7 +34,7 @@ struct GamesListView: View {
                 List(filteredGames) { game in
                     NavigationLink(destination: GameView(game: game)) {
                         HStack {
-                            ThumbnailImageViewModel(
+                            ThumbnailImageView(
                                 width: ThumbnailCustomization.thumbnailWith,
                                 height: ThumbnailCustomization.thumbnailHeight,
                                 cornerRadius: ThumbnailCustomization.thumbnailCornerRadius,
@@ -42,7 +42,7 @@ struct GamesListView: View {
                                 url: game.thumbnail
                             )
                             
-                            ListLabelViewModel(gameTitle: game.title)                  }
+                            ListLabelView(gameTitle: game.title)                  }
                         .padding(2)
                     }
                 }
@@ -54,7 +54,7 @@ struct GamesListView: View {
                 )
                 .toolbar {
                     ToolbarItem {
-                        ClearCacheButtonViewModel()
+                        ClearCacheButtonView()
                     }
                 }
             }

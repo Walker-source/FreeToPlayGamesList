@@ -1,5 +1,5 @@
 //
-//  ButtonViewModel.swift
+//  LinkButtonView.swift
 //  FreeToPlayGamesList
 //
 //  Created by Denis Lachikhin on 28.07.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ButtonViewModel: View {
+struct LinkButtonView: View {
     let buttonText: String
     
     let textSize: CGFloat
@@ -43,7 +43,7 @@ struct ButtonViewModel: View {
 }
 
 #Preview {
-    ButtonViewModel(
+    LinkButtonView(
         buttonText: "Test button",
         textSize: 15,
         frameWidth: 120,

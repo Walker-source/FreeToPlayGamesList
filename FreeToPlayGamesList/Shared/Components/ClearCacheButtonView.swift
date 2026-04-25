@@ -1,5 +1,5 @@
 //
-//  ClearCacheButtonViewModel.swift
+//  ClearCacheButtonView.swift
 //  FreeToPlayGamesList
 //
 //  Created by Denis Lachikhin on 14.08.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ClearCacheButtonViewModel: View {
+struct ClearCacheButtonView: View {
     @State private var isPresented = false
     
     var body: some View {
@@ -27,5 +27,5 @@ struct ClearCacheButtonViewModel: View {
 }
 
 #Preview {
-    ClearCacheButtonViewModel()
+    ClearCacheButtonView()
 }

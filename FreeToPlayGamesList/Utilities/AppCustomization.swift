@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Thumbnail Properties
-final class ThumbnailCustomization {
+struct ThumbnailCustomization {
     static let thumbnailWith: CGFloat = 150
     static let thumbnailHeight: CGFloat = 100
     static let thumbnailCornerRadius: CGFloat = 15
@@ -16,7 +16,7 @@ final class ThumbnailCustomization {
 }
 
 // MARK: - Game View Properties
-final class GameViewCustomization {
+struct GameViewCustomization {
     static let vstackSpacing: CGFloat = 6
     
     // MARK: - Thumbnail Properies
@@ -35,7 +35,7 @@ final class GameViewCustomization {
 }
 
 // MARK: - Game View Button Properties
-final class GameViewButtonsCustomization {
+struct LinkButtonCustomization {
     static let textSize: CGFloat = 20
     static let frameWidth: CGFloat = 150
     static let frameHeight: CGFloat = 40

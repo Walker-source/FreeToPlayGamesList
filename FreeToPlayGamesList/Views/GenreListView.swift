@@ -17,7 +17,7 @@ struct GenreListView: View {
         Group {
             NavigationStack {
                 if games.gamesList.isEmpty {
-                    MainViewErrorMessageViewModel(errorMessage: games.errorText) {
+                    ErrorMessageButtonView(errorMessage: games.errorText) {
                         Task {
                             await games.fetchGamesList()
                         }
@@ -33,7 +33,7 @@ struct GenreListView: View {
                                 ForEach(games.groupedGames[genre] ?? []) { game in
                                     NavigationLink(destination: GameView(game: game)) {
                                         HStack {
-                                            ThumbnailImageViewModel(
+                                            ThumbnailImageView(
                                                 width:
                                                     ThumbnailCustomization.thumbnailWith,
                                                 height:
@@ -45,7 +45,7 @@ struct GenreListView: View {
                                                 url: game.thumbnail
                                             )
                                             
-                                            ListLabelViewModel(gameTitle: game.title)
+                                            ListLabelView(gameTitle: game.title)
                                         }
                                         .padding(2)
                                     }

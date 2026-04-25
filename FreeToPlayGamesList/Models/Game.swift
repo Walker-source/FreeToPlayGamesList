@@ -26,7 +26,7 @@ struct Game: Decodable, Identifiable {
         Platform: \(platform).
         Publisher: \(publisher).
         Developer: \(developer).
-        Relseas date: \(releaseDate).
+        Release date: \(releaseDate).
         """
     }
 }

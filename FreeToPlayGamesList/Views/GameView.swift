@@ -12,14 +12,14 @@ struct GameView: View {
     
     var body: some View {
         VStack(spacing: GameViewCustomization.vstackSpacing) {
-            ThumbnailImageViewModel(
+            ThumbnailImageView(
                 height: GameViewCustomization.thumbnailImageHeight,
                 cornerRadius: GameViewCustomization.thumbnailCornerRaduius,
                 shadowRadius: GameViewCustomization.thumbnailShadowRaduius,
                 url: game.thumbnail
             )
             
-            GameDescriptionViewModel(
+            GameDescriptionView(
                 game: game,
                 descriptionTextSize: GameViewCustomization.descriptionTextSize,
                 descriptionTextFrameHeight: GameViewCustomization.descriptionTextFrameHeight,
@@ -31,23 +31,23 @@ struct GameView: View {
             Spacer()
             
             HStack( spacing: 50) {
-                ButtonViewModel(
+                LinkButtonView(
                     buttonText: "Play",
-                    textSize: GameViewButtonsCustomization.textSize,
-                    frameWidth: GameViewButtonsCustomization.frameWidth,
-                    frameHeight: GameViewButtonsCustomization.frameHeight,
-                    cornerRadius: GameViewButtonsCustomization.cornerRadius,
-                    shadowRaduis: GameViewButtonsCustomization.shadowRadius,
+                    textSize: LinkButtonCustomization.textSize,
+                    frameWidth: LinkButtonCustomization.frameWidth,
+                    frameHeight: LinkButtonCustomization.frameHeight,
+                    cornerRadius: LinkButtonCustomization.cornerRadius,
+                    shadowRaduis: LinkButtonCustomization.shadowRadius,
                     url: game.gameUrl
                 )
 
-                ButtonViewModel(
+                LinkButtonView(
                     buttonText: "About",
-                    textSize: GameViewButtonsCustomization.textSize,
-                    frameWidth: GameViewButtonsCustomization.frameWidth,
-                    frameHeight: GameViewButtonsCustomization.frameHeight,
-                    cornerRadius: GameViewButtonsCustomization.cornerRadius,
-                    shadowRaduis: GameViewButtonsCustomization.shadowRadius,
+                    textSize: LinkButtonCustomization.textSize,
+                    frameWidth: LinkButtonCustomization.frameWidth,
+                    frameHeight: LinkButtonCustomization.frameHeight,
+                    cornerRadius: LinkButtonCustomization.cornerRadius,
+                    shadowRaduis: LinkButtonCustomization.shadowRadius,
                     url: game.freetogameProfileUrl
                 )
             }

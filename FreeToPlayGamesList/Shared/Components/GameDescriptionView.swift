@@ -1,5 +1,5 @@
 //
-//  GameDescriptionViewModel.swift
+//  GameDescriptionView.swift
 //  FreeToPlayGamesList
 //
 //  Created by Denis Lachikhin on 06.08.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GameDescriptionViewModel: View {
+struct GameDescriptionView: View {
     let game: Game
     
     let descriptionTextSize: CGFloat
@@ -56,7 +56,7 @@ struct GameDescriptionViewModel: View {
 }
 
 #Preview {
-    GameDescriptionViewModel(
+    GameDescriptionView(
         game: Game(
             id: 1,
             title: "TheTestGame",

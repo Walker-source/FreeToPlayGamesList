@@ -1,5 +1,5 @@
 //
-//  ListLabelViewModel.swift
+//  ListLabelView.swift
 //  FreeToPlayGamesList
 //
 //  Created by Denis Lachikhin on 25.07.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListLabelViewModel: View {
+struct ListLabelView: View {
     let gameTitle: String
     
     var body: some View {
@@ -18,5 +18,5 @@ struct ListLabelViewModel: View {
 }
 
 #Preview {
-    ListLabelViewModel(gameTitle: "Test game")
+    ListLabelView(gameTitle: "Test game")
 }

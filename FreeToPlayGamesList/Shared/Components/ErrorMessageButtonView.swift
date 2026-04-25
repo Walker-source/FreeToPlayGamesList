@@ -1,5 +1,5 @@
 //
-//  MainViewErrorMessageViewModel.swift
+//  ErrorMessageButtonView.swift
 //  FreeToPlayGamesList
 //
 //  Created by Denis Lachikhin on 26.08.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainViewErrorMessageViewModel: View {
+struct ErrorMessageButtonView: View {
     let errorMessage: String
     let reload: () -> Void
     
@@ -23,5 +23,5 @@ struct MainViewErrorMessageViewModel: View {
 }
 
 #Preview {
-    MainViewErrorMessageViewModel(errorMessage: "Warning.", reload: {})
+    ErrorMessageButtonView(errorMessage: "Warning.", reload: {})
 }
