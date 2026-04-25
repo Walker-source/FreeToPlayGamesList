@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LinkButtonView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     let buttonText: String
     
     let textSize: CGFloat
@@ -34,7 +36,10 @@ struct LinkButtonView: View {
         .foregroundStyle(Color.white)
         .background(Color.gray)
         .cornerRadius(cornerRadius)
-        .shadow(radius: shadowRaduis)
+        .shadow(
+            color: .gray,
+            radius: shadowRaduis
+        )
     }
     
     private func openLink() {
